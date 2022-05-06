@@ -5,17 +5,20 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CepComponent } from './view/cep/cep.component';
+import { ExercicioLocationComponent } from './view/exercicio-location/exercicio-location.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CepComponent
+    CepComponent,
+    ExercicioLocationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
