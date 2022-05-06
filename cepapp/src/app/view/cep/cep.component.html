@@ -1,0 +1,14 @@
+<h2>Consulta CEP</h2>
+
+<input [(ngModel)]="cep" placeholder="CEP">
+
+<button (click)="consultarCep()">Consultar</button>
+
+<div *ngIf="endereco"> <!--//pergunta da prova quero proteger a div de ter coisas nulas @ngif-->
+    <p>Logradouro: {{endereco.logradouro}}</p>
+    <p>Complemento: {{endereco.complemento}}</p>
+    <p>Bairro: {{endereco.bairro}}</p>
+    <p>Localidade: {{endereco.localidade}}</p>
+    <p>UF: {{endereco.uf}}</p>  
+</div>
+

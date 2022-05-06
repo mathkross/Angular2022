@@ -1,0 +1,25 @@
+li {
+    list-style: none;
+    margin: 5px;
+}
+
+ul {
+    display: flex;
+    margin: 0;
+    padding-inline-start: 0;
+}
+
+a {
+    padding: 5px 15px 5px 15px ;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(28, 168, 224);
+    border-radius: 20px;
+    transition: all .5s;
+}
+
+a:hover{
+    color:rgb(224, 224, 28);
+    background-color:white;
+    box-shadow: 10px 5px 5px black;
+}
