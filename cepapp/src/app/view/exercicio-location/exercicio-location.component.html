@@ -1,0 +1,16 @@
+
+<h2>Consulta Rotas</h2>
+
+<input [(ngModel)]="area" placeholder="Area">
+<input [(ngModel)]="locationInput" placeholder="Location">
+
+<button (click)="consultarLocation()">Consultar</button>
+
+<div *ngIf="location"> <!--//pergunta da prova quero proteger a div de ter coisas nulas @ngif-->
+    <p>abbreviation: {{location.abbreviation}}</p>
+    <p>datetime: {{location.datetime}}</p>
+    <p>dayofweek: {{location.day_of_week}}</p>
+    <p>day_of_year: {{location.day_of_year}}</p>
+    <p>utc_datetime: {{location.utc_datetime}}</p>
+    <p>utc_offset: {{location.utc_offset}}</p>
+</div>
