@@ -2,7 +2,7 @@
 
 <ul>
     <li *ngFor="let cliente of clientes">
-        {{cliente.cpf}} - {{cliente.nome}}
+        <span (click)="editar(cliente)">{{cliente.cpf}} - {{cliente.nome}} </span> <span (click)="excluir(cliente.id)">X</span>
     </li>
 </ul>
 

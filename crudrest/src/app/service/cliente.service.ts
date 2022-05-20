@@ -19,4 +19,12 @@ export class ClienteService {
     return this.http.post<Cliente>(`${environment.apiEndPoint}/cliente`, cliente);
   }
 
+  remover(id: number): Observable<any> {
+    return this.http.delete(`${environment.apiEndPoint}/cliente/${id}`);
+
+  }
+
+  atualizar(cliente: Cliente): Observable<Cliente> {
+    return this.http.put<Cliente>(`${environment.apiEndPoint}/cliente/${cliente.id}`, cliente);
+  }
 }
