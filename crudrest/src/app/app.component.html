@@ -1,7 +1,27 @@
 <mat-toolbar color="warn">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>;
+    </button>
     <h1>Cadastro dos Parceiros</h1>
 </mat-toolbar>
 
-<a routerLink="cliente">Clientes</a>
-
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened="true" #sidenav>
+        <!--Opçoes de menu-->
+        <mat-nav-list>
+            <a mat-list-item routerLink="cliente">
+                <mat-icon>settings_accessibility</mat-icon>Clientes
+            </a>
+            <a mat-list-item routerLink="produto">
+                <mat-icon>star_half</mat-icon>Produtos
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="min-height: calc(100vh - 64px); padding:16px;">
+            <mat-card >
+                <router-outlet></router-outlet>
+            </mat-card>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

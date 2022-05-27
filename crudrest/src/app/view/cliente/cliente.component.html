@@ -6,12 +6,56 @@
     </li>
 </ul>
 
+<table mat-table [dataSource]="clientes" style="width: 100%">
+    <!--cria coluna nome-->
+    <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef>Nome </th>
+        <td mat-cell *matCellDef="let cliente">{{cliente.nome}}</td>
+    </ng-container>
+    
+    <!--Coluna CPF-->
+    <ng-container matColumnDef="cpf">
+        <th mat-header-cell *matHeaderCellDef>Cpf</th>
+        <td mat-cell *matCellDef="let cliente">{{cliente.cpf}}</td>
+    </ng-container>
+    <!--Coluna Acoes-->
+    <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef>Açoes</th>
+        <td mat-cell *matCellDef="let cliente">
+            <button mat-button (click)="editar(cliente)">
+                <mat-icon>edit</mat-icon>
+          </button> 
 
-<button (click)="novo()">Novo</button>
+            <button mat-button (click)="excluir(cliente.id)">
+                <mat-icon>delete</mat-icon>
+          </button>  
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunas"></tr>
+</table>
+
+
+<button mat-fab (click)="novo()" color="primary" class="fab">
+<mat-icon>
+add
+</mat-icon>
+
+</button>
 
 <div *ngIf="cliente">
-    <input placeholder="Nome" [(ngModel)]="cliente.nome">
+    <mat-form-field class="form-field">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="cliente.nome">
+    </mat-form-field>
+    
     <br>
-    <input placeholder="CPF" [(ngModel)]="cliente.cpf">
-    <button (click)="salvar()">Salvar</button>
+
+    <mat-form-field class="form-field">
+        <mat-label>CPF</mat-label>
+        <input matInput [(ngModel)]="cliente.cpf">
+    </mat-form-field>
+
+    <br>
+    <button color="primary" mat-raised-button (click)="salvar()">Salvar</button>
 </div>
